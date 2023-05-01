@@ -27,6 +27,13 @@
 
 <img width="871" alt="Screenshot 2023-05-01 at 4 24 35 PM" src="https://user-images.githubusercontent.com/97736991/235443055-94483d06-b7d3-4b94-ac4c-1894162a1f87.png">
 
+<br>
+# Problem Notes 
+<img width="1393" alt="Screenshot 2023-05-01 at 9 21 55 PM" src="https://user-images.githubusercontent.com/97736991/235481877-d02b8202-6de2-472e-a0fa-dc1c2b536914.png">
+<img width="743" alt="Screenshot 2023-05-01 at 9 32 29 PM" src="https://user-images.githubusercontent.com/97736991/235483623-b05f2fda-5359-4181-9dae-713bbd4ba2db.png">
 
 
+<img width="780" alt="Screenshot 2023-05-01 at 9 32 41 PM" src="https://user-images.githubusercontent.com/97736991/235483647-9f8a1779-c011-452d-90d3-0809bf968c56.png">
+<img width="745" alt="Screenshot 2023-05-01 at 9 44 46 PM" src="https://user-images.githubusercontent.com/97736991/235485613-05566531-12c7-466e-abac-7e69d06e5154.png">
+<img width="687" alt="Screenshot 2023-05-01 at 10 04 10 PM" src="https://user-images.githubusercontent.com/97736991/235488706-ec3a8833-36f0-4ce1-b42e-17fd4f972e08.png">
 
