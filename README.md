@@ -22,3 +22,11 @@
 * the u_i >= 0 and v_j >= 0 for each i and j because we want to penalise for breaking `any` constraint and NOT `atleast one` 
 
 <img width="749" alt="Screenshot 2023-04-30 at 2 26 55 PM" src="https://user-images.githubusercontent.com/97736991/235344614-5693bf80-5b41-43f8-bed3-f6d6b1d24ec0.png">
+
+<img width="902" alt="Screenshot 2023-05-01 at 4 24 20 PM" src="https://user-images.githubusercontent.com/97736991/235443037-1341f0e5-e3d4-450c-911a-ff0aa2c19066.png">
+
+<img width="871" alt="Screenshot 2023-05-01 at 4 24 35 PM" src="https://user-images.githubusercontent.com/97736991/235443055-94483d06-b7d3-4b94-ac4c-1894162a1f87.png">
+
+
+
+
