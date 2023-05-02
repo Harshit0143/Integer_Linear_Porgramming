@@ -65,9 +65,11 @@ You are looking for the minimum feasible flow.
 
 
 
+<img width="1431" alt="Screenshot 2023-05-02 at 2 57 17 PM" src="https://user-images.githubusercontent.com/97736991/235630211-b283baa0-64ba-441d-8ace-ba35138c2b4c.png">
 
-
-
-
+1)
+* let p = Q1 or Q2  and q = Q3 or Q4 
+* p ==> q <===> -p or q <==> 1-p + q >= 1 <==> q >= p
+It will be incorrect to pplug i values of P and Q as they aren't just 0 and 1. there is not an IFF relation 
 
 
