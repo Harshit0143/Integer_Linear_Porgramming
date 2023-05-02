@@ -40,3 +40,34 @@
 <img width="1241" alt="Screenshot 2023-05-02 at 1 05 19 AM" src="https://user-images.githubusercontent.com/97736991/235517036-fe67841c-e60c-4f81-b2cb-6bb19f17e2c4.png">
 
 
+<img width="804" alt="Screenshot 2023-05-02 at 11 33 46 AM" src="https://user-images.githubusercontent.com/97736991/235590939-a0340e10-b05d-4ee6-8aa0-f2a0c1462c7f.png">
+
+
+
+
+
+
+<img width="1027" alt="Screenshot 2023-05-02 at 1 42 32 PM" src="https://user-images.githubusercontent.com/97736991/235614207-cddf9083-4214-4c70-8355-3ff9fca84a62.png">
+
+
+let $c_1..........c_N$ and $d_1..........d_N$ represent:        
+$s$: virtual node:
+$c_i$: Clean cloths availabe on $i^{th}$ day.      
+$d_i$: dirty cloths on $i^{th}$ day.  
+Edges:           
+* $c_i to d_i$ of $lb = r_i$ and $ub = r_i$. We don't need an upper bound actually. We can give an exchange argument for this that optimal solution will always have flow in the edge = $lb(e)$
+* for each $i = 1,2....N$ $s \to c_i$  with $lb = p$
+* $d_i \to $  
+You are looking for the minimum feasible flow. 
+
+
+
+
+
+
+
+
+
+
+
+
