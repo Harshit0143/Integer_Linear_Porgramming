@@ -73,3 +73,5 @@ You are looking for the minimum feasible flow.
 It will be incorrect to pplug i values of P and Q as they aren't just 0 and 1. there is not an IFF relation 
 
 
+
+KKT points 
