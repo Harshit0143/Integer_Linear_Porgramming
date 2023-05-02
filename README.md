@@ -1,3 +1,5 @@
+## Doubt: elmination 
+
 # Solving integer linear Programming
 * Please see problem statement here: [problem.pdf](https://github.com/Harshit0143/Integer_Linear_Porgramming/blob/main/problem.pdf)
 
@@ -75,3 +77,8 @@ It will be incorrect to pplug i values of P and Q as they aren't just 0 and 1. t
 
 
 KKT points 
+<img width="1436" alt="Screenshot 2023-05-02 at 5 29 36 PM" src="https://user-images.githubusercontent.com/97736991/235660181-61e28e35-2bc4-4212-9706-09f950b48b3f.png">
+* For KKT solve 1 and 4 then see if it's feasible. If it's feasible, it's optimal
+<img width="1643" alt="Screenshot 2023-05-02 at 5 30 02 PM" src="https://user-images.githubusercontent.com/97736991/235660280-21984234-584c-45cb-bbcf-41e7705ba2fc.png">
+
+
