@@ -1,4 +1,7 @@
 ## Doubt: elmination 
+<img width="773" alt="Screenshot 2023-05-06 at 12 47 06 AM" src="https://user-images.githubusercontent.com/97736991/236550174-e94fc90c-b698-4fc6-8f07-a473fd20c5d3.png">
+
+
 * transportation problem 
 * Grapgb network ke dual likh ele bhai
 # Solving integer linear Programming
