@@ -1,8 +1,8 @@
-import rational_numbers as rnum
+from rational_numbers import rationals as ratn
 import show
 import sys
-# import final_test
-
+import final_test
+import time 
 
 
 global n, m
@@ -18,27 +18,27 @@ def get_input():
         n = int(line[0])
         m = int(line[1])
 
-        tableau = [[rnum.rationals()] * (n+2*m+1) for _ in range(m+1)]
+        tableau = [[ratn()] * (n+2*m+1) for _ in range(m+1)]
 
         line = file.readline().strip().split()
         for i in range(1, m+1):
-            tableau[i][0] = rnum.rationals(int(line[i-1]))
+            tableau[i][0] = ratn(int(line[i-1]))
 
-        cost_red = [rnum.rationals()]*(n+m+1)
+        cost_red = [ratn()]*(n+m+1)
         line = file.readline().strip().split()
         for j in range(1, n+1):
-            cost_red[j] = rnum.rationals(int(line[j-1]))
+            cost_red[j] = ratn(int(line[j-1]))
 
         for i in range(1, m+1):
             line = file.readline().strip().split()
             f = -1 if tableau[i][0].num < 0 else 1
             tableau[i][0].num *= f
             for j in range(1, n+1):
-                tableau[i][j] = rnum.rationals(f*int(line[j-1]))
+                tableau[i][j] = ratn(f*int(line[j-1]))
             for j in range(n+1, n+m+1):
-                tableau[i][j] = rnum.rationals(f*(j-n == i))
+                tableau[i][j] = ratn(f*(j-n == i))
             for j in range(n+m+1, n+2*m+1):
-                tableau[i][j] = rnum.rationals(j-n-m == i)
+                tableau[i][j] = ratn(j-n-m == i)
 
 
 
@@ -79,15 +79,19 @@ def simplex_phase1():
             tableau[0][col] -= tableau[row][col]
     for col in range(n+m+1, n+2*m+1):
         xB.append(col)
-        tableau[0][col] = rnum.rationals(1)
+        tableau[0][col] = ratn(1)
     simplex()  
     
    
-    if (tableau[0][0].num > 0):
-        print("Infeasible ProbleM. Detected during simplex Phase 1")
+    if (tableau[0][0].num < 0):
+        print("Infeasible Problem. Detected during simplex Phase 1")
         sys.exit()
+
+  
     drive_out_auxillary()
     erase_auxillary()
+    # print(xB)
+    # show.show(tableau)
     
     fill_reduced_costs()
     simplex()
@@ -160,7 +164,7 @@ def dual_simplex():
         piv_col = choose_col_dual(piv_row)
         
         if piv_col == None:
-            print("Optimal Value is +INFINITY")
+            print("Infeasible Problem. Dual Optimal found +Infinity")
             sys.exit()
         change_basis(piv_row, piv_col)
     
@@ -200,7 +204,7 @@ def simplex():
         
         piv_row = choose_row_primal(piv_col)
         if piv_row == None:
-            print("Optimal Value if -INFINITY")
+            print("Optimal Value is -Infinity")
             sys.exit()
         change_basis(piv_row, piv_col)
     
@@ -216,34 +220,36 @@ def check_dual():
         n = int(line[0])
         m = int(line[1])
 
-        tableau = [[rnum.rationals()] * (n+m+1) for _ in range(m+1)]
+        tableau = [[ratn()] * (n+m+1) for _ in range(m+1)]
 
         line = file.readline().strip().split()
 
         xB = [None]
         for i in range(1, m+1):
-            tableau[i][0] = rnum.rationals(int(line[i-1]))
+            tableau[i][0] = ratn(int(line[i-1]))
             xB.append(n+i)
 
         line = file.readline().strip().split()
         for j in range(1, n+1):
-            tableau[0][j] = rnum.rationals(int(line[j-1]))
+            tableau[0][j] = ratn(int(line[j-1]))
         
        
         
         for i in range(1, m+1):
             line = file.readline().strip().split()  
             for j in range(1, n+1):
-                tableau[i][j] = rnum.rationals(int(line[j-1]))
+                tableau[i][j] = ratn(int(line[j-1]))
             for j in range(n+1, n+m+1):
-                tableau[i][j] = rnum.rationals(j-n == i)
+                tableau[i][j] = ratn(j-n == i)
     dual_simplex()
 
 
-def non_int():
+def non_int(tolerate = ratn()):
     for i in range (1,len(tableau)):
-        if tableau[i][0].den != 1:
+        f = tableau[i][0].fractional_part()
+        if (f > tolerate  and ratn(1)-f > tolerate):
             return i
+    
 def build_sol():
     print("Objective_value:", tableau[0][0].neg().num)
     sol = [0]*n
@@ -257,10 +263,10 @@ def add_cut(r):
     L = []
     for num in tableau[r]:
         L.append(num.fractional_part().neg())
-    L.append(rnum.rationals(1))
+    L.append(ratn(1))
     tableau.append(L)
     for i in range (len(tableau)-1):
-        tableau[i].append(rnum.rationals())
+        tableau[i].append(ratn())
     
 
     
@@ -268,24 +274,23 @@ def print_col():
     for i in range(len(tableau)):
         print(tableau[i][0],end  = ' ')
     print()
-    
+
+
+
 def gomory(input):
     get_input()
     simplex_phase1()
     while True:
         fr = non_int()
         if fr == None:
-            return build_sol()
+            return build_sol() 
         add_cut(fr)
         dual_simplex()
-        # print_col()
+   
         
-
-       
-
-
+t = time.time()
 gomory("input.txt")
-
+print(time.time()-t)
 
 
 
